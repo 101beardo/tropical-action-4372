@@ -1053,15 +1053,7 @@ var subTotalPrice = Math.floor(Number(n.price) - (Number(n.discount)/100)*n.pric
 
 
 
-        // var total_price = array.reduce(function (a, b) {
-        //     return { subTotalPrice: a.subTotalPrice + b.subTotalPrice };
-        // })
-        // console.log("total", total_price)
-
-        // var total_price = array.reduce(function (a, b) {
-        //     return { price: a.price + b.price };
-        // })
-        // console.log(total_price);
+ 
 array.map((el)=>{
 var subTotalPrice = Math.floor(Number(el.price) - (Number(el.discount)/100)*el.price);
 sub_total_price += subTotalPrice;
@@ -1134,20 +1126,7 @@ localStorage.setItem("flag", JSON.stringify(flag));
 
             flag = true;
             localStorage.setItem("flag", JSON.stringify(flag));
-        //     price_summary = {
-        //     price: sub_total_price,
-        //     bag_discount: bag_discounted_amount,
-        //     total: total_price,
-        // }
-
-
-
-        // <div>
-        //                             <p class="total_calculate_price">null</p>
-        //                             <p>FREE</p>
-        //                             <p class="bag-discount">0</p>
-        //                             <p class="Subtotal"></p>
-        //                         </div>
+   
 
             document.querySelector(".bag-discount").textContent ="₹ "+ (bag_discounted_amount + 100);
             document.querySelector(".Subtotal").textContent = "₹" + (total_price-bag_discounted_amount-100);
@@ -1166,12 +1145,7 @@ localStorage.setItem("flag", JSON.stringify(flag));
     }
 
     console.log(saved_amount_array)
-    // var bag_discounted_amount = saved_amount_array.reduce((m, n) => {
-    //     return m + n;
-    // })
-
-    // document.querySelector(".bag-discount").textContent = "₹" + bag_discounted_amount;
-    // console.log(bag_discounted_amount)
+   
 
 
 
@@ -1193,7 +1167,7 @@ localStorage.setItem("flag", JSON.stringify(flag));
 
 
 
-    // wishlist script
+ 
 
     var obj = [
         {
@@ -1241,30 +1215,7 @@ localStorage.setItem("flag", JSON.stringify(flag));
     ]
 
 
-// //  {
-//     desc: "Jet Black Round Neck 3/4th Sleeve T-Shirt",
-//             subTotalPrice: 999,
-//             price: 1999,
-//             image: "https://images.bewakoof.com/t320/know-your-power-boyfriend-t-shirt-464873-1642404499-1.jpg",
-//         }
 
-
-// {
-//     "id": "HST8",
-//     "name": "Gotham City Half Sleeve T-shirt",
-//     "price": "799",
-//     "image1": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536986-1.jpg",
-//     "image2": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536989-2.jpg",
-//     "image3": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536993-3.jpg",
-//     "image4": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536986-1.jpg",
-//     "image5": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536989-2.jpg",
-//     "desc": "Regular fit - Fits just right - not too tight, not too loose.Single Jersey, 100% Cotton Classic, lightweight jersey fabric comprising 100% cotton.",
-//     "tribe": " ₹50",
-//     "discount": "50"
-// }
-
-
-    // localStorage.setItem("bewkoof_wishlist", JSON.stringify(obj));
 
     var wishlist_data = JSON.parse(localStorage.getItem("bewakoof_wishlist"));
     console.log(wishlist_data);
@@ -1281,17 +1232,7 @@ localStorage.setItem("flag", JSON.stringify(flag));
             var wishlistProduct = document.createElement("div");
             wishlistProduct.id = "wishlist-product";
             var subTotalPrice =  Math.floor(Number(elem.price) - (Number(elem.discount)/100)*elem.price);
-            // wishlistProduct.innerHTML=`
-
-            //         <img src=${elem.image1} alt="">
-            //         <p id="name">${elem.desc}</p>
-            //         <p id="wishlist-price">₹${elem.subTotalPrice}<span>₹999</span><span>67% OFF</span></p>
-            //         <p id="wishlist-tribe">₹299 For Tribe Members</p>
-            //         <button>MOVE TO BAG</button>
-            //         <span class="wishlist-prod-close">&times;</span>
-
-            // `;
-
+         
             var img = document.createElement("img");
             var p1 = document.createElement("p");
             var p2 = document.createElement("p");
@@ -1332,47 +1273,9 @@ localStorage.setItem("flag", JSON.stringify(flag));
     };
 
 
-    // document.querySelector("#btn-address-save").addEventListener("click", function () {
-
-    //     //     address-fullname
-    //     // address-mobilenumber
-    //     // address-pincode
-    //     // address-city-district
-    //     // address-state
-    //     // address-flatno
-    //     // address-area
-    //     // address-landmark
-
-    //     var obj = [{
-    //         fullname: document.querySelector(".address-fullname").value,
-    //         mobilenumber: document.querySelector(".address-mobilenumber").value,
-    //         pincode: document.querySelector(".address-pincode").value,
-    //         city_district: document.querySelector(".address-city-district").value,
-    //         state: document.querySelector(".address-state").value,
-    //         flatno: document.querySelector(".address-flatno").value,
-    //         area: document.querySelector(".address-area").value,
-    //         landmark: document.querySelector(".address-landmark").value,
-
-
-    //     }];
-
-
-    //     localStorage.setItem("myaddress_data", JSON.stringify(obj))
-    //     console.log(obj)
-    //     window.location.href = "ordersummary.html"
-
-
-    // })
 
     document.querySelector("#btn-address-save").addEventListener("click", function () {
-        //     address-fullname
-        // address-mobilenumber
-        // address-pincode
-        // address-city-district
-        // address-state
-        // address-flatno
-        // address-area
-        // address-landmark
+      
         var obj = [{
             fullname: document.querySelector(".address-fullname").value,
             mobilenumber: document.querySelector(".address-mobilenumber").value,
@@ -1420,4 +1323,3 @@ localStorage.setItem("flag", JSON.stringify(flag));
 
 
 
-<!-- // we have to modify tribe value line- 796 -->
